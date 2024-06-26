@@ -90,6 +90,10 @@ export default class Attachment extends TrixObject {
     return this.attributes.get("href")
   }
 
+  getAlt() {
+    return this.attributes.get("alt")
+  }
+
   getFilename() {
     return this.attributes.get("filename") || ""
   }

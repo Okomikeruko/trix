@@ -217,7 +217,7 @@ export default class HTMLParser extends BasicObject {
           }
           return this.processedElements.push(element)
         case "img":
-          attributes = { url: element.getAttribute("src"), contentType: "image" }
+          attributes = { url: element.getAttribute("src"), alt: element.getAttribute("alt"), contentType: "image" }
           const object = getImageDimensions(element)
           for (const key in object) {
             const value = object[key]

@@ -252,13 +252,14 @@ export const fixtures = {
       filename: "example.png",
       filesize: 98203,
       contentType: "image/png",
+      alt: "Test alt text",
       width: 1,
       height: 1,
     }
     const attachment = new Attachment(attrs)
     const text = Text.textForAttachmentWithAttributes(attachment)
 
-    const image = makeElement("img", { src: attrs.url, "data-trix-mutable": true, width: 1, height: 1 })
+    const image = makeElement("img", { src: attrs.url, alt: "Test alt text", "data-trix-mutable": true, width: 1, height: 1 })
     image.dataset.trixStoreKey = [ "imageElement", attachment.id, image.src, image.width, image.height ].join("/")
 
     const caption = makeElement({ tagName: "figcaption", className: css.attachmentCaption })
@@ -304,13 +305,14 @@ export const fixtures = {
       filename: "example.png",
       filesize: 98203,
       contentType: "image/png",
+      alt: "Test alt text",
       width: 1,
       height: 1,
     }
     const attachment = new Attachment(attrs)
     const attachmentText = Text.textForAttachmentWithAttributes(attachment)
 
-    const image = makeElement("img", { src: attrs.url, "data-trix-mutable": true, width: 1, height: 1 })
+    const image = makeElement("img", { src: attrs.url, alt: "Test alt text", "data-trix-mutable": true, width: 1, height: 1 })
     image.dataset.trixStoreKey = [ "imageElement", attachment.id, image.src, image.width, image.height ].join("/")
 
     const caption = makeElement({ tagName: "figcaption", className: css.attachmentCaption })
@@ -352,6 +354,7 @@ export const fixtures = {
   "image attachment with edited caption": (() => {
     const attrs = {
       url: TEST_IMAGE_URL,
+      alt: "Test alt text",
       filename: "example.png",
       filesize: 123,
       contentType: "image/png",
@@ -362,7 +365,7 @@ export const fixtures = {
     const textAttrs = { caption: "Example" }
     const text = Text.textForAttachmentWithAttributes(attachment, textAttrs)
 
-    const image = makeElement("img", { src: attrs.url, "data-trix-mutable": true, width: 1, height: 1 })
+    const image = makeElement("img", { src: attrs.url, alt: "Test alt text", "data-trix-mutable": true, width: 1, height: 1 })
     image.dataset.trixStoreKey = [ "imageElement", attachment.id, image.src, image.width, image.height ].join("/")
 
     const caption = makeElement({

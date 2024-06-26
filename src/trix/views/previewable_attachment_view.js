@@ -14,6 +14,7 @@ export default class PreviewableAttachmentView extends AttachmentView {
       tagName: "img",
       attributes: {
         src: "",
+        alt: "",
       },
       data: {
         trixMutable: true,
@@ -43,6 +44,7 @@ export default class PreviewableAttachmentView extends AttachmentView {
     const url = this.attachment.getURL()
     const previewURL = this.attachment.getPreviewURL()
     image.src = previewURL || url
+    image.alt = this.attachment.getAlt()
 
     if (previewURL === url) {
       image.removeAttribute("data-trix-serialized-attributes")
